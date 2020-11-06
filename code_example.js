@@ -1,3 +1,4 @@
+
 class MyElement extends HTMLElement {
 
     constructor() {
@@ -8,6 +9,10 @@ class MyElement extends HTMLElement {
         this.name = nameAtr;
         console.log(nameAtr);
     }
+
+  static get observedAttributes() {
+      return ['name'];
+  }
 
     connectedCallback() {
         this.innerHTML = `
@@ -83,13 +88,15 @@ class MyElement extends HTMLElement {
               <option>CAD</option>
               <option>EUR</option>
             </select>
-            <button onclick="getPicture()">Ejecutar Proceso
-            <strong>Venndelo</strong></button>
 
-            <button>Ejecutar Proceso
-            <strong>Venndelo</strong></button>
           </div>
         </div>
+
+        <button onclick="getPicture()">Ejecutar Proceso
+        <strong>Venndelo</strong></button>
+
+        <button>Ejecutar Proceso
+        <strong>Venndelo</strong></button>
       </div>
         `;
         this.style.color = 'blue';
