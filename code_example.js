@@ -37,12 +37,8 @@ class MyElement extends HTMLElement {
               <option>CAD</option>
               <option>EUR</option>
             </select>
-            <button
-              onclick="getPicture()"
-              class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-2 border border-green-500 hover:border-transparent rounded"
-            >
-              <slot></slot>
-            </button>
+            <button onclick="getPicture()">Ejecutar Proceso
+            <strong>Venndelo</strong></button>
           </div>
         </div>
       </div>
@@ -59,4 +55,3 @@ class MyElement extends HTMLElement {
 
 }
 customElements.define('custom-element', MyElement);
-
