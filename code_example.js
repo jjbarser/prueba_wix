@@ -45,8 +45,6 @@ class MyElement extends HTMLElement {
         </div>
         <button onclick="getPicture()">Ejecutar Proceso
         <strong>Venndelo</strong></button>
-        <button onclick="getPicture()">Ejecutar Proceso
-        <strong>Jeison</strong></button>
       </div>
         `;
         this.style.color = 'blue';
