@@ -1,17 +1,26 @@
 class MyElement extends HTMLElement {
 
-    constructor() {
+  class holaMundo extends HTMLElement{
+    constructor(){
         super();
         this.name;
-    }
-    attributeChangeCallback (nameAtr) { 
-        this.name = nameAtr;
-        console.log(nameAtr);
+        this.surname;
     }
 
-  static get observedAttributes() {
-      return ['name'];
-  }
+    static get observedAttributes(){
+        return ['name', "surname"];
+    }
+      
+     attributeChangedCallback(nameAttr, oldValue, newValue){
+        switch(nameAttr){
+            case "name":
+                this.name = newValue;
+            break;
+            case "surname":
+                this.surname = newValue;
+            break;
+        }
+    }
 
     connectedCallback() {
         this.innerHTML = `
