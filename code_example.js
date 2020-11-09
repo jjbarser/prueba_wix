@@ -57,7 +57,7 @@ class MyElement extends HTMLElement {
       </div>
         `;
     this.style.color = 'blue';
-    //this.dispatchEvent(new CustomEvent('my-event'));
+    this.dispatchEvent(new CustomEvent('my-event'));
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
     //componentNuevo.dato2 = 'Julian';
