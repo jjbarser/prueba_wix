@@ -26,8 +26,7 @@ class MyElement extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.innerHTML = `
         <div>
-        <button style="background-color:blue;" id="button">ocultar</button>
-        <button style="background-color:blue;" id="button2">mostrar</button>
+        <button id="button">ocultar</button>
       </div>
         `;
     this.style.color = 'blue';
