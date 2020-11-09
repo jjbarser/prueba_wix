@@ -62,7 +62,7 @@ class MyElement extends HTMLElement {
       </div>
         `;
     this.style.color = 'blue';
-     this.dispatchEvent(new CustomEvent('my-event'));
+     //this.dispatchEvent(new CustomEvent('my-event'));
 
      const button = document.querySelector('#button');
      button.addEventListener('click', () => {
