@@ -1,4 +1,4 @@
-class MyElement2 extends HTMLElement {
+class MyElement extends HTMLElement {
 
   constructor() {
     super();
@@ -42,6 +42,7 @@ class MyElement2 extends HTMLElement {
           />
           <div class="absolute inset-y-0 right-0 flex items-center">
             <select
+              onchange="cambiarEfecto()"
               aria-label="Currency"
               class="form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5"
             >
@@ -56,10 +57,10 @@ class MyElement2 extends HTMLElement {
       </div>
         `;
     this.style.color = 'blue';
-    this.dispatchEvent(new CustomEvent('my-event'));
-    const componentNuevo = document.getElementsByTagName('recibe-element')[0];
-    componentNuevo.dato1 = 'jeison';
-    componentNuevo.dato2 = 'Julian';
+    //this.dispatchEvent(new CustomEvent('my-event'));
+    //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
+    //componentNuevo.dato1 = 'jeison';
+    //componentNuevo.dato2 = 'Julian';
 
   }
 
@@ -67,5 +68,9 @@ class MyElement2 extends HTMLElement {
     this.dispatchEvent(new CustomEvent('my-event'));
   }
 
+  cambiarEfecto(){
+    this.dispatchEvent(new CustomEvent('my-event'));
+  }
+
 }
-customElements.define('custom-element2', MyElement2);
+customElements.define('custom-element', MyElement);
