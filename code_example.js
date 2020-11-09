@@ -25,8 +25,8 @@ class MyElement extends HTMLElement {
   connectedCallback() {
      this.innerHTML = `
         <div>
-        <button style="background-color:blue; color:withe; padding: 5px;"  id="button">${this.surname}</button>
-        <button style="background-color:blue;"  id="button2">${this.name}</button>
+        <button style="background-color:gray; color:withe; padding: 5px;"  id="button">${this.surname}</button>
+        <button style="background-color:gray; color:withe; padding: 5px;"  id="button2">${this.name}</button>
       </div>
         `;
     this.style.color = 'blue';
