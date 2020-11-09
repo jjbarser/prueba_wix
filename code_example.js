@@ -46,7 +46,7 @@ class MyElement extends HTMLElement {
               class="form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5"
             >
               <option>${this.name}</option>
-              <option>CAD</option>
+              <option>${this.surname}</option>
               <option>EUR</option>
             </select>
           </div>
