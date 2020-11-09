@@ -53,11 +53,11 @@ class MyElement extends HTMLElement {
           </div>
         </div>
         <button onclick="getPicture()">Ejecutar Proceso
-        <strong>Venndelo</strong></button>
+        <strong>Venndelo1</strong></button>
       </div>
         `;
     this.style.color = 'blue';
-      document.dispatchEvent(new CustomEvent('my-event'));
+      window.document.dispatchEvent(new CustomEvent('my-event'));
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
     //componentNuevo.dato2 = 'Julian';
