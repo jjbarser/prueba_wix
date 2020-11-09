@@ -21,6 +21,12 @@ class MyElement extends HTMLElement {
     }
   }
 
+  cambiarEfecto() {
+    alert('hola click');
+    document.dispatchEvent(new CustomEvent('my-event'));
+  }
+
+
   connectedCallback() {
     this.innerHTML = `
         <div>
@@ -52,22 +58,24 @@ class MyElement extends HTMLElement {
             </select>
           </div>
         </div>
-        <button onclick="getPicture()">Ejecutar Proceso
-        <strong>Venndelo1</strong></button>
+        <button id="button">Open comp </button>
       </div>
         `;
     this.style.color = 'blue';
      this.dispatchEvent(new CustomEvent('my-event'));
+
+     const button = document.querySelector('#button');
+     button.addEventListener('click', () => {
+       console.log('Se lanzó la alerta');
+      this.dispatchEvent(new CustomEvent('my-event'));
+     });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
     //componentNuevo.dato2 = 'Julian';
 
   }
 
-  getPicture = () => {
-    alert('hola click');
-    document.dispatchEvent(new CustomEvent('my-event'));
-  }
+
 
   cambiarEfecto= () => {
     alert('hola click');
