@@ -63,6 +63,7 @@ class MyElement extends HTMLElement {
   getPicture() {
     this.dispatchEvent(new CustomEvent('my-event'));
   }
+  
 
 }
 customElements.define('custom-element', MyElement);
