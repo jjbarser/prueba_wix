@@ -43,17 +43,25 @@ class MyElement extends HTMLElement {
             placeholder="0.00"
           />
           <div class="absolute inset-y-0 right-0 flex items-center">
+            <select
+              onchange="cambiarEfecto()"
+              aria-label="Currency"
+              class="form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5"
+            >
+              <option>${this.name}</option>
+              <option>${this.surname}</option>
+              <option>EUR</option>
+            </select>
           </div>
         </div>
-        <button id="button">${this.name} </button>
-        <button id="button2">${this.surname} </button>
+        <button id="button">Open comp </button>
       </div>
         `;
     this.style.color = 'blue';
      //this.dispatchEvent(new CustomEvent('my-event'));
 
      const button = document.querySelector('#button');
-     button.addEventListener("click", () => {
+     button.addEventListener('click', () => {
        console.log('Se lanzó la alerta');
       this.dispatchEvent(new CustomEvent('my-event'));
      });
