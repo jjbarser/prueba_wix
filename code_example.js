@@ -63,13 +63,13 @@ class MyElement extends HTMLElement {
     //componentNuevo.dato2 = 'Julian';
 
   }
-  
-  getPicture() {
+
+  getPicture = () => {
     alert('hola click');
     document.dispatchEvent(new CustomEvent('my-event'));
   }
 
-  cambiarEfecto(){
+  cambiarEfecto= () => {
     alert('hola click');
     document.dispatchEvent(new CustomEvent('my-event'));
   }
