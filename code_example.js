@@ -25,7 +25,8 @@ class MyElement extends HTMLElement {
   connectedCallback() {
      this.innerHTML = `
         <div>
-        <button id="button">${this.name}</button>
+        <button style="background-color:blue;"  id="button">${this.surname}</button>
+        <button style="background-color:blue;"  id="button2">${this.name}</button>
       </div>
         `;
     this.style.color = 'blue';
@@ -35,6 +36,12 @@ class MyElement extends HTMLElement {
      button.addEventListener('click', () => {
        console.log('Se lanzó la alerta');
       this.dispatchEvent(new CustomEvent('my-event'));
+     });
+
+     const button2 = document.querySelector('#button2');
+     button2.addEventListener('click', () => {
+       console.log('Se lanzó la alerta');
+      this.dispatchEvent(new CustomEvent('my-event2'));
      });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
