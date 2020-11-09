@@ -57,7 +57,7 @@ class MyElement extends HTMLElement {
       </div>
         `;
     this.style.color = 'blue';
-      window.document.dispatchEvent(new CustomEvent('my-event'));
+     this.dispatchEvent(new CustomEvent('my-event'));
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
     //componentNuevo.dato2 = 'Julian';
@@ -65,12 +65,13 @@ class MyElement extends HTMLElement {
   }
   
   getPicture() {
+    alert('hola click');
     document.dispatchEvent(new CustomEvent('my-event'));
   }
 
   cambiarEfecto(){
-    document.dispatchEvent(new CustomEvent('my-event'));
     alert('hola click');
+    document.dispatchEvent(new CustomEvent('my-event'));
   }
 
 }
