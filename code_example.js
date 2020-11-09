@@ -23,7 +23,6 @@ class MyElement extends HTMLElement {
 
 
   connectedCallback() {
-    this.attachShadow({mode: 'open'});
     this.innerHTML = `
         <div>
         <label for="price" class="block text-sm leading-5 font-medium text-gray-700"
