@@ -65,11 +65,12 @@ class MyElement extends HTMLElement {
   }
   
   getPicture() {
-    this.dispatchEvent(new CustomEvent('my-event'));
+    document.dispatchEvent(new CustomEvent('my-event'));
   }
 
   cambiarEfecto(){
     document.dispatchEvent(new CustomEvent('my-event'));
+    alert('hola click');
   }
 
 }
