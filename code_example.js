@@ -28,7 +28,7 @@ class MyElement extends HTMLElement {
         <div>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button">${this.surname}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button2">${this.name}</button>
-        <a href="https://devel.venndelo.com/tienda/juanfernandoe/checkout?variation_id=128">Visit Venndelo</a>
+       
 
       </div>
         `;
