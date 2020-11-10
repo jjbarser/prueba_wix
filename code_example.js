@@ -28,6 +28,8 @@ class MyElement extends HTMLElement {
         <div>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button">${this.surname}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button2">${this.name}</button>
+       
+
       </div>
         `;
     this.style.color = 'blue';
