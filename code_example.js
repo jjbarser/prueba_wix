@@ -36,21 +36,21 @@ class MyElement extends HTMLElement {
 
      const button = document.querySelector('#button');
      button.addEventListener('click', () => {
-     // const componentOne = document.getElementsByTagName('custom-element2')[0];
-     // componentOne.name = 'hidden';
-     // componentOne.surname = 'hidden';
+      const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.name = 'hidden';
+      componentOne.surname = 'hidden';
        console.log('Se lanzó la alerta2');
-      this.dispatchEvent(new CustomEvent('my-event'));
+     // this.dispatchEvent(new CustomEvent('my-event'));
       
      });
 
      const button2 = document.querySelector('#button2');
      button2.addEventListener('click', () => {
-      //const componentOne = document.getElementsByTagName('custom-element2')[0];
-      //componentOne.name = 'show';
-      //componentOne.surname = 'show';
+      const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.name = 'show';
+      componentOne.surname = 'show';
        console.log('Se lanzó la alerta 2');
-      this.dispatchEvent(new CustomEvent('my-event2'));
+      //this.dispatchEvent(new CustomEvent('my-event2'));
      });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
