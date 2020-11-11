@@ -39,7 +39,7 @@ class MyElement extends HTMLElement {
      // const componentOne = document.getElementsByTagName('custom-element2')[0];
      // componentOne.name = 'hidden';
      // componentOne.surname = 'hidden';
-       console.log('Se lanzó la alerta');
+       console.log('Se lanzó la alerta2');
       this.dispatchEvent(new CustomEvent('my-event'));
       
      });
@@ -49,7 +49,7 @@ class MyElement extends HTMLElement {
       //const componentOne = document.getElementsByTagName('custom-element2')[0];
       //componentOne.name = 'show';
       //componentOne.surname = 'show';
-       console.log('Se lanzó la alerta');
+       console.log('Se lanzó la alerta 2');
       this.dispatchEvent(new CustomEvent('my-event2'));
      });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
