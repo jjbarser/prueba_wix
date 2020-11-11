@@ -25,8 +25,8 @@ class MyElement2 extends HTMLElement {
       this.innerHTML = `
         <div>
         <span>Recibiendo parametros</span>
-        <div ${this.name}> Informacion Venndelo</div>
-        <div ${this.surname}> Ventas de productos por la página web</div>
+        <div> oculto ${this.name}</div>
+        <div> oculto ${this.surname}</div>
         </div>
           `;
       this.style.color = 'blue';
