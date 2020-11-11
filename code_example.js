@@ -39,7 +39,7 @@ class MyElement extends HTMLElement {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
       componentOne.setAttribute('name', 'hidden');
       componentOne.setAttribute('surname', 'hidden');
-       console.log('Se lanzó la alerta2');
+       console.log('Se lanzó la alerta 3');
      // this.dispatchEvent(new CustomEvent('my-event'));
       
      });
@@ -47,10 +47,9 @@ class MyElement extends HTMLElement {
      const button2 = document.querySelector('#button2');
      button2.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
-      componentOne.setAttribute('name', 'hidden');
-      componentOne.setAttribute('surname', 'hidden');
-      componentOne.surname = 'show';
-       console.log('Se lanzó la alerta 2');
+      componentOne.setAttribute('name', 'show');
+      componentOne.setAttribute('surname', 'show');
+       console.log('Se lanzó la alerta 3');
       //this.dispatchEvent(new CustomEvent('my-event2'));
      });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
