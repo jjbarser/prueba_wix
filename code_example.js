@@ -40,7 +40,7 @@ class MyElement extends HTMLElement {
       componentOne.setAttribute('name', 'hidden');
       componentOne.setAttribute('surname', 'hidden');
        console.log('Se lanzó la alerta 3');
-     // this.dispatchEvent(new CustomEvent('my-event'));
+     this.dispatchEvent(new CustomEvent('my-event'));
       
      });
 
@@ -50,7 +50,7 @@ class MyElement extends HTMLElement {
       componentOne.setAttribute('name', 'show');
       componentOne.setAttribute('surname', 'show');
        console.log('Se lanzó la alerta 3');
-      //this.dispatchEvent(new CustomEvent('my-event2'));
+      this.dispatchEvent(new CustomEvent('my-event2'));
      });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
