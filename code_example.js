@@ -56,6 +56,7 @@ class MyElement extends HTMLElement {
 
     const button3 = document.querySelector('#button3');
     button3.addEventListener('click', () => {
+      console.log('Se lanzó la alerta 3');
       this.dispatchEvent(new CustomEvent('my-event3'));
     });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
