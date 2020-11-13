@@ -23,11 +23,11 @@ class MyElement2 extends HTMLElement {
     }
   
     this.connectedCallback();
-    const componentOne = document.getElementsByTagName('custom-element2')[0];
-    const div = document.querySelectorAll('div.oculto')
-    div.forEach(data => {
-      data.style = `visibility: ${componentOne.getAttribute('name')}`
-    });
+    // const componentOne = document.getElementsByTagName('custom-element2')[0];
+    // const div = document.querySelectorAll('div.oculto')
+    // div.forEach(data => {
+    //   data.style = `visibility: ${componentOne.getAttribute('name')}`
+    // });
   }
 
   connectedCallback() {
@@ -35,8 +35,8 @@ class MyElement2 extends HTMLElement {
     this.innerHTML = `
         <div>
           <span>Recibiendo parametros</span> 
-          <div class="oculto"> Tus producto son:  ${this.name}</div>
-          <div class="oculto"> Los productos adquiridos son:   ${this.surname}</div>
+          <div style="visibility: ${this.name};" class="oculto"> Tus producto son:  ${this.name}</div>
+          <div style="visibility: ${this.name};" class="oculto"> Los productos adquiridos son:   ${this.surname}</div>
         </div>
           `;
     this.style.color = 'blue';
