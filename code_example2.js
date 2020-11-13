@@ -21,15 +21,17 @@ class MyElement2 extends HTMLElement {
         break;
       }
     }
+  
+    this.connectedCallback();
     const componentOne = document.getElementsByTagName('custom-element2')[0];
     const div = document.querySelectorAll('div.oculto')
-    div.forEach(data =>{
+    div.forEach(data => {
       data.style = `visibility: ${componentOne.getAttribute('name')}`
     });
   }
 
   connectedCallback() {
-
+    //let shadowRoot = this.attachShadow({mode: 'open'});
     this.innerHTML = `
         <div>
           <span>Recibiendo parametros</span> 
@@ -44,6 +46,5 @@ class MyElement2 extends HTMLElement {
     //componentNuevo.dato2 = 'Julian';
 
   }
-
 }
 customElements.define('custom-element2', MyElement2);
