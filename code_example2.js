@@ -42,6 +42,10 @@ class MyElement2 extends HTMLElement {
       width: 100%;
       background-color: gray;
       visibility: visible;
+      top:2,
+      left:0; 
+      z-indez: 10;
+      box-shadow: 1px 3px 10px 0px #c7c7c7
     }
     .ocultar {
       visibility: hidden;
@@ -54,10 +58,9 @@ class MyElement2 extends HTMLElement {
         </div>
           `;
 
-   // this.style.color = 'blue';
+    this.style.position = 'relative';
     //this.dispatchEvent(new CustomEvent('my-event'));
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
   }
 }
 customElements.define('custom-element2', MyElement2);
-
