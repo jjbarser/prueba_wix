@@ -60,3 +60,4 @@ class MyElement2 extends HTMLElement {
   }
 }
 customElements.define('custom-element2', MyElement2);
+
