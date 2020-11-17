@@ -28,7 +28,8 @@ class MyElement extends HTMLElement {
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button">${this.surname}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button2">${this.name}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button3"> Enviar información</button>
-        <button style="background-color:gray; color:withe; padding: 5px;"  id="button4"> modificar componente</button>
+        <button style="background-color:gray; color:withe; padding: 5px;"  id="button4"> mostrar componente</button>
+        <button style="background-color:gray; color:withe; padding: 5px;"  id="button5"> ocultar componente</button>
         <a href="https://devel.venndelo.com/tienda/juanfernandoe/checkout?variation_id=128">Visit Venndelo</a>
 
       </div>
@@ -38,8 +39,8 @@ class MyElement extends HTMLElement {
     const button = document.querySelector('#button');
     button.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
-      componentOne.setAttribute('name', 'hidden');
-      componentOne.setAttribute('surname', 'hidden');
+      componentOne.setAttribute('name', 'camisas');
+      componentOne.setAttribute('surname', 'pantalones');
       console.log('Se lanzó la alerta 3');
       this.dispatchEvent(new CustomEvent('my-event'));
 
@@ -48,10 +49,11 @@ class MyElement extends HTMLElement {
     const button2 = document.querySelector('#button2');
     button2.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
+      
       componentOne.children[1].classList.add('mostrar');
       console.log(componentOne.children[1]);
-      componentOne.setAttribute('name', 'visible');
-      componentOne.setAttribute('surname', 'visible');
+      componentOne.setAttribute('name', 'tenis');
+      componentOne.setAttribute('surname', 'tecnología');
       console.log('Se lanzó la alerta 3');
       this.dispatchEvent(new CustomEvent('my-event2'));
     });
@@ -68,7 +70,15 @@ class MyElement extends HTMLElement {
     const button4 = document.querySelector('#button4');
     button4.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.children[1].classList.remove('ocultar');
       componentOne.children[1].classList.add('mostrar');
+    });
+
+    const button5 = document.querySelector('#button5');
+    button5.addEventListener('click', () => {
+      const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.children[1].classList.remove('mostrar');
+      componentOne.children[1].classList.add('ocultar');
     });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
