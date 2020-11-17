@@ -67,15 +67,15 @@ class MyElement extends HTMLElement {
     const button4 = document.querySelector('#button4');
     button4.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
-      componentOne.classList.remove('ocultar');
-      componentOne.classList.add('mostrar');
+      componentOne.children[1].classList.remove('ocultar');
+      componentOne.children[1].classList.add('mostrar');
     });
 
     const button5 = document.querySelector('#button5');
     button5.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
-      componentOne.classList.remove('mostrar');
-      componentOne.classList.add('ocultar');
+      componentOne.children[1].classList.remove('mostrar');
+      componentOne.children[1].classList.add('ocultar');
     });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
