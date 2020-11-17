@@ -39,7 +39,7 @@ class MyElement2 extends HTMLElement {
     .mostrar {
       color: blue;
       height: 100vh;
-      width: 100%;
+      width: 100vh;
       position: absolute;
       background-color: gray;
       visibility: visible;
