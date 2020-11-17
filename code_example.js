@@ -28,12 +28,11 @@ class MyElement extends HTMLElement {
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button">${this.surname}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button2">${this.name}</button>
         <button style="background-color:gray; color:withe; padding: 5px;"  id="button3"> Enviar información</button>
+        <button style="background-color:gray; color:withe; padding: 5px;"  id="button4"> modificar componente</button>
         <a href="https://devel.venndelo.com/tienda/juanfernandoe/checkout?variation_id=128">Visit Venndelo</a>
 
       </div>
         `;
-    this.style.color = 'blue';
-    this.style.backgroundColor= 'gray';
     //this.dispatchEvent(new CustomEvent('my-event'));
 
     const button = document.querySelector('#button');
@@ -49,6 +48,8 @@ class MyElement extends HTMLElement {
     const button2 = document.querySelector('#button2');
     button2.addEventListener('click', () => {
       const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.children[1].classList.add('mostrar');
+      console.log(componentOne.children[1]);
       componentOne.setAttribute('name', 'visible');
       componentOne.setAttribute('surname', 'visible');
       console.log('Se lanzó la alerta 3');
@@ -63,6 +64,11 @@ class MyElement extends HTMLElement {
       //componentOne.setAttribute('surname', 'camisas');
       console.log(this);
       this.dispatchEvent(new CustomEvent('my-event3'));
+    });
+    const button4 = document.querySelector('#button4');
+    button4.addEventListener('click', () => {
+      const componentOne = document.getElementsByTagName('custom-element2')[0];
+      componentOne.children[1].classList.add('mostrar');
     });
     //const componentNuevo = document.getElementsByTagName('recibe-element')[0];
     //componentNuevo.dato1 = 'jeison';
