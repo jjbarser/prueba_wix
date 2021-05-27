@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div>
+        </div>
+    </header>
+    
+    <footer>
+        <div>
+            <p style="text-align: left; margin: 5px 20px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
+                nemo distinctio, necessitatibus minus molestias facilis accusamus! Praesentium, nobis harum id est alias
+                labore recusandae odit natus, sunt nam possimus? Harum, animi expedita molestiae aperiam voluptates
+                explicabo recusandae nam autem consequatur, laborum neque id accusamus possimus quisquam et repellat!
+                Nulla, commodi?</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        var servicioUrlFirmada = "https://api-dev.coordinadora.com/puntos-drop/security/recursos/firmados"
+
+        function consumoServicio() {
+            var xmlhttp = new XMLHttpRequest();
+            var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
+            xmlhttp.open("GET", servicioUrlFirmada, true);
+            xmlhttp.setRequestHeader("x-api-key", key);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    var urlResultado = xmlhttp.responseText;
+                    var scriptDroop = document.createElement('script');
+                    scriptDroop.setAttribute('src', urlResultado);
+                    document.body.appendChild(scriptDroop);
+                }
+            };
+            xmlhttp.send();
+        }
+        window.onload = function () {
+            consumoServicio();
+        }
+    </script>
+</body>
+
+</html>
