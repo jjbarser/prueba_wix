@@ -32,7 +32,7 @@
             xmlhttp.open("GET", servicioUrlFirmada, true);
             xmlhttp.setRequestHeader("x-api-key", key);
             xmlhttp.setRequestHeader('Content-Type', 'application/xml'); //
-            xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*'); //
+            xmlhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://jjbarser.github.io'); //
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     var urlResultado = xmlhttp.responseText;
@@ -47,7 +47,6 @@
             consumoServicio();
         }
 
-        consumoServicio();
     </script>
 </body>
 
