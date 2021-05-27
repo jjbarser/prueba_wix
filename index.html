@@ -1,56 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Puntos Drop- pagina base e-commerce</title>
+      <base href="/">
+      <script type="text/javascript">
+        var servicioUrlFirmada = "https://api-test.coordinadora.com/puntos-drop/security/recursos/firmados"
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba Coordinadora</title>
+        function consumoServicio(){
+          var xmlhttp = new XMLHttpRequest();
+          var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
+          xmlhttp.open("GET",servicioUrlFirmada,true);
+          xmlhttp.setRequestHeader("x-api-key",key);
+          xmlhttp.onreadystatechange = function() {
+            if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
+              var urlResultado = xmlhttp.responseText;
+              var scriptDroop = document.createElement( 'script' );
+              scriptDroop.setAttribute( 'src', urlResultado );
+              document.body.appendChild( scriptDroop );
+            }
+          };
+          xmlhttp.send();
+        }
+        window.onload = function() {
+          consumoServicio();
+        }
+      </script>
+    </head>
+    <body>
+
+      <puntos-drop entry-parameter="AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw" logo-comercio="https://storage.googleapis.com/cm-drop-test.appspot.com/assets/image/img-logo-prueba.png"></puntos-drop>
+      <label>Direccion de entrega</label>
+      <input type="text" name="dirección de envio despues de Droop" id="inputPrueba">
     <script type="text/javascript">
-        var servicioUrlFirmada = "https://api-dev.coordinadora.com/puntos-drop/security/recursos/firmados"
-
-        function consumoServicio() {
-            var xmlhttp = new XMLHttpRequest();
-            var key = "AIzaSyDmFyjOlwha-jIPOznA3TuGAf8f495e3XM";
-            xmlhttp.open("GET", servicioUrlFirmada, true);
-            xmlhttp.setRequestHeader("x-api-key", key);
-            // xmlhttp.setRequestHeader('Content-Type', 'application/xml');
-            // xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*'); //
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    var urlResultado = xmlhttp.responseText;
-                    var scriptDroop = document.createElement('script');
-                    scriptDroop.setAttribute('src', urlResultado);
-                    document.body.appendChild(scriptDroop);
-                }
-            };
-            xmlhttp.send();
-        }
-        window.onload = function () {
-            consumoServicio();
-        }
-
-
-
+      const widgetOut=document.querySelector('puntos-drop');
+        widgetOut.addEventListener('objetoDroopSalida', (event) => {
+          if (event.detail.flagRetorno) {
+            document.getElementById('inputPrueba').value = event.detail.direccion;
+          }else {
+            document.getElementById('inputPrueba').value = "";
+          }
+        });
     </script>
-</head>
 
-<body>
-    <header>
-        <div>
-            <puntos-drop key-parameter="AIzaSyDmFyjOlwha-jIPOznA3TuGAf8f495e3XM"
-                logo-cliente="https://devel.venndelo.com/shared/imagen-965.jpg"></puntos-drop>
-        </div>
-    </header>
-            <script>
-                const widgetOut = document.querySelector('puntos-drop');
-                widgetOut.addEventListener('objetoDroopSalida', (event) => {
-                    if (event.detail.flagRetorno) {
-                        console.log('obtener Valor', event.detail.flagRetorno);
-                    } else {
-                        console.log('obtener Valor', event.detail.flagRetorno);
-                    }
-                });
-            </script>
-</body>
-
-</html>
+    </body>
+  </html>
