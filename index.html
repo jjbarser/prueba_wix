@@ -4,35 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <header>
-        <div>
-            <puntos-drop key-parameter="AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw" logo-cliente="https://devel.venndelo.com/shared/imagen-965.jpg"></puntos-drop>
-        </div>
-    </header>
-    
-    <footer>
-        <div>
-            <p style="text-align: left; margin: 5px 20px;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In
-                nemo distinctio, necessitatibus minus molestias facilis accusamus! Praesentium, nobis harum id est alias
-                labore recusandae odit natus, sunt nam possimus? Harum, animi expedita molestiae aperiam voluptates
-                explicabo recusandae nam autem consequatur, laborum neque id accusamus possimus quisquam et repellat!
-                Nulla, commodi?</p>
-        </div>
-    </footer>
+    <title>Prueba Coordinadora</title>
     <script type="text/javascript">
         var servicioUrlFirmada = "https://api-dev.coordinadora.com/puntos-drop/security/recursos/firmados"
 
         function consumoServicio() {
             var xmlhttp = new XMLHttpRequest();
-            var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
+            var key = "AIzaSyDmFyjOlwha-jIPOznA3TuGAf8f495e3XM";
             xmlhttp.open("GET", servicioUrlFirmada, true);
             xmlhttp.setRequestHeader("x-api-key", key);
-            xmlhttp.setRequestHeader('Content-Type', 'application/xml'); //
-            xmlhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://jjbarser.github.io'); //
+            // xmlhttp.setRequestHeader('Content-Type', 'application/xml');
+            // xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*'); //
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     var urlResultado = xmlhttp.responseText;
@@ -47,7 +29,28 @@
             consumoServicio();
         }
 
+
+
     </script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <puntos-drop key-parameter="AIzaSyDmFyjOlwha-jIPOznA3TuGAf8f495e3XM"
+                logo-cliente="https://devel.venndelo.com/shared/imagen-965.jpg"></puntos-drop>
+        </div>
+    </header>
+            <script>
+                const widgetOut = document.querySelector('puntos-drop');
+                widgetOut.addEventListener('objetoDroopSalida', (event) => {
+                    if (event.detail.flagRetorno) {
+                        console.log('obtener Valor', event.detail.flagRetorno);
+                    } else {
+                        console.log('obtener Valor', event.detail.flagRetorno);
+                    }
+                });
+            </script>
 </body>
 
 </html>
