@@ -10,6 +10,7 @@
 <body>
     <header>
         <div>
+            <puntos-drop key-parameter="AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw" logo-cliente="https://devel.venndelo.com/shared/imagen-965.jpg"></puntos-drop>
         </div>
     </header>
     
@@ -30,6 +31,8 @@
             var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
             xmlhttp.open("GET", servicioUrlFirmada, true);
             xmlhttp.setRequestHeader("x-api-key", key);
+            xmlhttp.setRequestHeader('Content-Type', 'application/xml'); //
+            xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*'); //
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     var urlResultado = xmlhttp.responseText;
@@ -43,6 +46,8 @@
         window.onload = function () {
             consumoServicio();
         }
+
+        consumoServicio();
     </script>
 </body>
 
