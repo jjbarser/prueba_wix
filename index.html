@@ -1,49 +1,96 @@
 <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Puntos Drop- pagina base e-commerce</title>
-      <base href="/">
-      <script type="text/javascript">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Puntos Drop- pagina base e-commerce</title>
+    <base href="/">
+    <script type="text/javascript">
         var servicioUrlFirmada = "https://api-test.coordinadora.com/puntos-drop/security/recursos/firmados"
 
-        function consumoServicio(){
-          var xmlhttp = new XMLHttpRequest();
-          var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
-          xmlhttp.open("GET",servicioUrlFirmada,true);
-          xmlhttp.setRequestHeader("x-api-key",key);
-          xmlhttp.onreadystatechange = function() {
-            if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
-              var urlResultado = xmlhttp.responseText;
-              var scriptDroop = document.createElement( 'script' );
-              scriptDroop.setAttribute( 'src', urlResultado );
-              document.body.appendChild( scriptDroop );
-            }
-          };
-          xmlhttp.send();
+        function consumoServicio() {
+            var xmlhttp = new XMLHttpRequest();
+            var key = "AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw";
+            xmlhttp.open("GET", servicioUrlFirmada, true);
+            xmlhttp.setRequestHeader("x-api-key", key);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    var urlResultado = xmlhttp.responseText;
+                    var scriptDroop = document.createElement('script');
+                    scriptDroop.setAttribute('src', urlResultado);
+                    document.body.appendChild(scriptDroop);
+                }
+            };
+            xmlhttp.send();
         }
-        window.onload = function() {
-          consumoServicio();
+        window.onload = function () {
+            consumoServicio();
         }
-      </script>
-    </head>
-    <body>
+    </script>
+</head>
 
-      <puntos-drop entry-parameter="AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw" logo-comercio="https://storage.googleapis.com/cm-drop-test.appspot.com/assets/image/img-logo-prueba.png"></puntos-drop>
-      <label>Direccion de entrega</label>
-      <input type="text" name="dirección de envio despues de Droop" id="inputPrueba">
+<body>
+
+    <puntos-drop entry-parameter="AIzaSyDX3orJATftM2tPFfHdUkousd_taukGpMw"
+        logo-comercio="https://storage.googleapis.com/cm-drop-test.appspot.com/assets/image/img-logo-prueba.png">
+    </puntos-drop>
+    <label>Direccion de entrega</label>
+    <input type="text" name="dirección de envio despues de Droop" id="inputPrueba">
     <script type="text/javascript">
-      const widgetOut=document.querySelector('puntos-drop');
+        const widgetOut = document.querySelector('puntos-drop');
         widgetOut.addEventListener('objetoDroopSalida', (event) => {
-          if (event.detail.flagRetorno) {
-            document.getElementById('inputPrueba').value = event.detail.direccion;
-          }else {
-            document.getElementById('inputPrueba').value = "";
-          }
+            if (event.detail.flagRetorno) {
+                document.getElementById('inputPrueba').value = event.detail.direccion;
+            } else {
+                document.getElementById('inputPrueba').value = "";
+            }
         });
     </script>
 
-    </body>
-  </html>
+    <script type="text/javascript">
+        // Measure product views / impressions
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+            'event': 'view_item_list',
+            'ecommerce': {
+                'items': [
+                    {
+                        'item_name': 'Triblend Android T-Shirt',       // Name or ID is required.
+                        'item_id': '12345',
+                        'price': '15.25',
+                        'item_brand': 'Google',
+                        'item_category': 'Apparel',
+                        'item_category2': 'Mens',
+                        'item_category3': 'Shirts',
+                        'item_category4': 'Tshirts',
+                        'item_variant': 'Gray',
+                        'item_list_name': 'Search Results',
+                        'item_list_id': 'SR123',
+                        'index': 1,
+                        'quantity': '1'
+                    },
+                    {
+                        'item_name': 'Donut Friday Scented T-Shirt',
+                        'item_id': '67890',
+                        'price': '33.75',
+                        'item_brand': 'Google',
+                        'item_category': 'Apparel',
+                        'item_category2': 'Mens',
+                        'item_category3': 'Shirts',
+                        'item_category4': 'Tshirts',
+                        'item_variant': 'Black',
+                        'item_list_name': 'Search Results',
+                        'item_list_id': 'SR123',
+                        'index': 2,
+                        'quantity': '1'
+                    }]
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
